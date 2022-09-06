@@ -1,11 +1,11 @@
 import { Fragment } from "react";
-import { useHistory, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import QuoteItem from "./QuoteItem";
 import classes from "./QuoteList.module.css";
 
 const sortQuotes = (quotes, ascending) => {
-  return quotes.sort((quoteA, quoteB) => {
+  return [...quotes].sort((quoteA, quoteB) => {
     if (ascending) {
       return quoteA.id > quoteB.id ? 1 : -1;
     } else {
