@@ -1,13 +1,5 @@
 import { Fragment, useEffect } from "react";
-import {
-  useParams,
-  Route,
-  Link,
-  useRouteMatch,
-  Routes,
-  Outlet,
-  useLocation,
-} from "react-router-dom";
+import { useParams, Outlet } from "react-router-dom";
 
 import HighlightedQuote from "../components/quotes/HighlightedQuote";
 import useHttp from "../hooks/use-http";
@@ -15,8 +7,6 @@ import { getSingleQuote } from "../lib/api";
 import LoadingSpinner from "../components/UI/LoadingSpinner";
 
 const QuoteDetail = () => {
-  // const match = useRouteMatch();
-  const { pathname } = useLocation();
   const params = useParams();
 
   const { quoteId } = params;
